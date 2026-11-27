@@ -10,7 +10,7 @@
 ### 2. Create dependabot yaml template
 
 ```
-- Copy the contents of `.github/dependabot.yml.sample`
+- Copy the contents of `samples/dependabot.yml.sample`
 - Create a `.github/dependabot.yml` in the default branch (main)
 - Identify your programming language(s)
 - Add correspondent package ecosystems 
