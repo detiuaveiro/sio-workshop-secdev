@@ -17,6 +17,11 @@ On the second link, you must **create an organization manually**. Then, give it 
 
 ### 3. Create a new project and generate a token
 
+Before creating the SonarQube Cloud project, open **Settings** in your GitHub
+fork and set its **Default branch** to `step4`. SonarQube Cloud's Free plan
+supports direct analysis of the project's main branch. Check that SonarQube
+Cloud shows `step4` as the project's main branch before running the analysis.
+
 On the new page you are redirected to click [Analyze a new project](https://sonarcloud.io/projects/create):
 - On the [Analyze projects](https://sonarcloud.io/projects/create) page, give any display name you want, and the project key will be automatically defined. Moreover, leave the project visibility as public. At the end, click the `Next button`
 - In the following page (`Set up project for Clean as You Code`), select the `Previous version` option. At the end, click `Create project`.
@@ -43,7 +48,9 @@ In the new page, you will receive some instructions on how to setup the GitHub A
 
 ### 5. Check the analysis results
 
-After pushing the new workflow, it will be executed by GitHub. After some time, you will have a new branch corresponding to `step4` on the `Branches` page in SonarCube. If everything is working correctly, it will show you an issue.
+After pushing to `step4`, check the **CI - Static analysis** run in GitHub
+Actions. Once the scan completes, open the SonarQube Cloud project summary
+and confirm that the results are for `step4`, the project's main branch.
 
 However, there are no security issues. For you to check the automatic analysis of security problems, you can force your Python code to have one. Perhaps, change the `get_weather.py` code as follows (line 24):
 ```python
